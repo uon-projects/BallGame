@@ -16,5 +16,13 @@ public class baby1 extends Actor
     {
         // Add your action code here.
         
+        Actor ball = (Actor)getWorld().getObjects(ball1.class).get(0);
+        
+        if(ball.getY() > getY()) {
+            setLocation(getX(), getY() + 4);
+        } else {
+            setLocation(getX(), getY() - 4);
+        }
+        
     }    
 }

@@ -14,7 +14,7 @@ public class ball1 extends Actor
      */
     public void act() 
     {
-        move(3);
+        move(8);
         int noRandom;
         
         Actor baby_1 = getOneIntersectingObject(baby1.class);
