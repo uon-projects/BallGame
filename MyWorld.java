@@ -25,8 +25,9 @@ public class MyWorld extends World
         }
         
         addObject(new baby1(), 150, 100);
+        addObject(new baby3(), 150, 300);
         addObject(new baby2(), 450, 100);
-        //addObject(new baby2(), 450, 300);
+        addObject(new baby4(), 450, 300);
         //End of code that must be included in your solution
         
         addObject(new ball1(), 450, 100);
