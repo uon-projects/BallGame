@@ -19,7 +19,9 @@ public class baby1 extends Actor
         Actor ball = (Actor)getWorld().getObjects(ball1.class).get(0);
         
         if(ball.getY() > getY()) {
-            setLocation(getX(), getY() + 4);
+            if(getY() < 200) {
+                setLocation(getX(), getY() + 4);
+            }
         } else {
             setLocation(getX(), getY() - 4);
         }
