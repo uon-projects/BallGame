@@ -49,6 +49,10 @@ public class ball1 extends Actor
         if(checkLost())
         {
             setLocation(300, 200);
+            Actor baby1 = (Actor)getWorld().getObjects(baby1.class).get(0);
+            baby1.setLocation(150, 100);
+            Actor baby2 = (Actor)getWorld().getObjects(baby2.class).get(0);
+            baby2.setLocation(450, 100);
         }
         
     }
