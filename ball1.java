@@ -67,7 +67,7 @@ public class ball1 extends Actor
 
         if(checkBoundaries())
         {
-            turn(-90);
+            bounceoffwall();
         }
         
         if(checkLost())
@@ -83,6 +83,18 @@ public class ball1 extends Actor
             baby4.setLocation(450, 300);
         }
         
+    }
+    
+    public void bounceoffwall()
+    {
+        if (getY() == 0 || getY() == getWorld().getHeight()-1) /** top or bottom */
+        {
+            setRotation(360-getRotation());
+        }
+        if (getX()==0 || getX() == getWorld().getWidth()-1) /** left or right */
+        {
+            setRotation(180-getRotation());
+        }
     }
     
     public boolean checkBoundaries()
