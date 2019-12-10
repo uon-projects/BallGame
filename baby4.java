@@ -21,7 +21,9 @@ public class baby4 extends Actor
         if(ball.getY() > getY()) {
             setLocation(getX(), getY() + 4);
         } else {
-            setLocation(getX(), getY() - 4);
+            if(getY() > 200) {
+                setLocation(getX(), getY() - 4);
+            }
         }
         
     }    
