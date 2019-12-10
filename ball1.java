@@ -29,6 +29,18 @@ public class ball1 extends Actor
             } while(getOneIntersectingObject(baby1.class) != null);
         }
         
+        Actor baby_3 = getOneIntersectingObject(baby3.class);
+        if (baby_3!=null)
+        {
+            do {
+                noRandom = Greenfoot.getRandomNumber(180);
+            } while(noRandom < 30 || noRandom > 150);
+            turn(noRandom + 90);
+            do {
+                move(10);
+            } while(getOneIntersectingObject(baby3.class) != null);
+        }
+        
         Actor baby_2 = getOneIntersectingObject(baby2.class);
         if (baby_2!=null)
         {
@@ -39,6 +51,18 @@ public class ball1 extends Actor
             do {
                 move(10);
             } while(getOneIntersectingObject(baby2.class) != null);
+        }
+        
+        Actor baby_4 = getOneIntersectingObject(baby4.class);
+        if (baby_4!=null)
+        {
+            do {
+                noRandom = Greenfoot.getRandomNumber(180);
+            } while(noRandom < 30 || noRandom > 150);
+            turn(noRandom + 90);
+            do {
+                move(10);
+            } while(getOneIntersectingObject(baby4.class) != null);
         }
 
         if(checkBoundaries())
@@ -53,6 +77,10 @@ public class ball1 extends Actor
             baby1.setLocation(150, 100);
             Actor baby2 = (Actor)getWorld().getObjects(baby2.class).get(0);
             baby2.setLocation(450, 100);
+            Actor baby3 = (Actor)getWorld().getObjects(baby3.class).get(0);
+            baby3.setLocation(150, 300);
+            Actor baby4 = (Actor)getWorld().getObjects(baby4.class).get(0);
+            baby4.setLocation(450, 300);
         }
         
     }
