@@ -9,10 +9,21 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
 
+    Counter counter = new Counter();
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
+    
+    public Counter getCounter()
+    {
+        return counter;
+    }
+    
+    public int getInt() {
+        return 1;
+    }
+    
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -24,6 +35,7 @@ public class MyWorld extends World
             addObject(new barrier(), 300, 20*loop);
         }
         
+        addObject(counter, 100, 10);
         addObject(new baby1(), 150, 100);
         addObject(new baby3(), 150, 300);
         addObject(new baby2(), 450, 100);
