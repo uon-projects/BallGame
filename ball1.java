@@ -28,9 +28,7 @@ public class ball1 extends Actor
         if (baby_1!=null)
         {
             turn(generateTurnDegree() + 90);
-            do {
-                move(10);
-            } while(getOneIntersectingObject(baby1.class) != null);
+            moveOnCollision(baby1.class);
         }
         
         //getting the baby3 class and store it into a variable
@@ -38,9 +36,7 @@ public class ball1 extends Actor
         if (baby_3!=null)
         {
             turn(generateTurnDegree() + 90);
-            do {
-                move(10);
-            } while(getOneIntersectingObject(baby3.class) != null);
+            moveOnCollision(baby3.class);
         }
         
         //getting the babies that are in the Team B
@@ -49,9 +45,7 @@ public class ball1 extends Actor
         if (baby_2!=null)
         {
             turn(generateTurnDegree() + 90);
-            do {
-                move(10);
-            } while(getOneIntersectingObject(baby2.class) != null);
+            moveOnCollision(baby2.class);
         }
         
         //getting the baby4 class and store it into a variable
@@ -59,9 +53,7 @@ public class ball1 extends Actor
         if (baby_4!=null)
         {
             turn(generateTurnDegree() + 90);
-            do {
-                move(10);
-            } while(getOneIntersectingObject(baby4.class) != null);
+            moveOnCollision(baby4.class);
         }
 
         if(checkBoundaries())
@@ -95,6 +87,13 @@ public class ball1 extends Actor
     public int generateTurnDegree()
     {
         return Greenfoot.getRandomNumber(120) + 30;
+    }
+    
+    private void moveOnCollision(Class baby)
+    {
+        do {
+            move(10);
+        } while(getOneIntersectingObject(baby) != null);
     }
     
     public void bounceoffwall()
