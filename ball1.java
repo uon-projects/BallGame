@@ -17,6 +17,10 @@ public class ball1 extends Actor
         move(8);
         int noRandom;
         
+        World world = getWorld();
+        MyWorld myWorld = (MyWorld)world;
+        Counter counter = myWorld.getCounter();
+        
         Actor baby_1 = getOneIntersectingObject(baby1.class);
         if (baby_1!=null)
         {
@@ -72,6 +76,7 @@ public class ball1 extends Actor
         
         if(checkLost())
         {
+            counter.addScore();
             setLocation(300, 200);
             Actor baby1 = (Actor)getWorld().getObjects(baby1.class).get(0);
             baby1.setLocation(150, 100);
