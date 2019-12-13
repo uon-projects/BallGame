@@ -3,27 +3,28 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class baby2 here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @authors (Teodor Grigor & Scott Turner) 
+ * @version (v1.0)
  */
 public class baby2 extends Actor
 {
-    /**
-     * Act - do whatever the baby2 wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    //method that is called when the run or act button is pressed
+    //method that draw the actor
     public void act() 
     {
-        // Add your action code here.
-        
+        //getting the class of the holder world - MyWorld        
         World world = getWorld();
         MyWorld myWorld = (MyWorld)world;
+        //getting the speed of the babies from the myWorld
         int babySpeed = myWorld.getBabySpeed();
         
+        //getting the ball class and storing into a variable
         Actor ball = (Actor)getWorld().getObjects(ball1.class).get(0);
         
+        //moving the baby towards the ball
         if(ball.getY() > getY()) {
             if(getY() < 200) {
+                //move the baby only to the half of the screen
                 setLocation(getX(), getY() + babySpeed);
             }
         } else {
