@@ -18,7 +18,7 @@ public class baby4 extends Actor
         //getting the speed of the babies from the myWorld
         int babySpeed = myWorld.getBabySpeed();
         
-        //getting the ball class and storing into a variable
+        //getting the ball class and store it into a variable
         Actor ball = (Actor)getWorld().getObjects(ball1.class).get(0);
         
         //moving the baby towards the ball
