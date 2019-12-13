@@ -110,7 +110,7 @@ public class ball1 extends Actor
     
     public boolean checkLost()
     {
-        if(getX() > 10 && getX() < 590) {
+        if(getX() > 100 && getX() < 500) {
             return false;
         }
         return true;
