@@ -14,8 +14,14 @@ public class ball1 extends Actor
      */
     public void act() 
     {
-        move(8);
         int noRandom;
+        
+        World world = getWorld();
+        MyWorld myWorld = (MyWorld)world;
+        Counter counter = myWorld.getCounter();
+        int ballSpeed = myWorld.getBallSpeed();
+        
+        move(ballSpeed);
         
         Actor baby_1 = getOneIntersectingObject(baby1.class);
         if (baby_1!=null)
@@ -72,6 +78,11 @@ public class ball1 extends Actor
         
         if(checkLost())
         {
+            if(getX() <= 100) {
+                counter.addScoreToB();
+            } else if(getX() >=500) {
+                counter.addScoreToA();
+            }
             setLocation(300, 200);
             Actor baby1 = (Actor)getWorld().getObjects(baby1.class).get(0);
             baby1.setLocation(150, 100);

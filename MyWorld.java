@@ -9,10 +9,26 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
 
+    Counter counter = new Counter();
+    int babyMoveSpeed = 2, ballSpeed = 6;
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
+    
+    public Counter getCounter()
+    {
+        return counter;
+    }
+    
+    public int getBabySpeed() {
+        return babyMoveSpeed;
+    }
+    
+    public int getBallSpeed() {
+        return ballSpeed;
+    }
+    
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -24,6 +40,7 @@ public class MyWorld extends World
             addObject(new barrier(), 300, 20*loop);
         }
         
+        addObject(counter, 300, 25);
         addObject(new baby1(), 150, 100);
         addObject(new baby3(), 150, 300);
         addObject(new baby2(), 450, 100);
