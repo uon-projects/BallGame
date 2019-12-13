@@ -14,12 +14,14 @@ public class ball1 extends Actor
      */
     public void act() 
     {
-        move(8);
         int noRandom;
         
         World world = getWorld();
         MyWorld myWorld = (MyWorld)world;
         Counter counter = myWorld.getCounter();
+        int ballSpeed = myWorld.getBallSpeed();
+        
+        move(ballSpeed);
         
         Actor baby_1 = getOneIntersectingObject(baby1.class);
         if (baby_1!=null)
