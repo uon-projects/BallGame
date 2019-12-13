@@ -10,6 +10,7 @@ public class MyWorld extends World
 {
 
     Counter counter = new Counter();
+    int babyMoveSpeed = 2, ballSpeed = 6;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -20,8 +21,12 @@ public class MyWorld extends World
         return counter;
     }
     
-    public int getInt() {
-        return 1;
+    public int getBabySpeed() {
+        return babyMoveSpeed;
+    }
+    
+    public int getBallSpeed() {
+        return ballSpeed;
     }
     
     public MyWorld()
