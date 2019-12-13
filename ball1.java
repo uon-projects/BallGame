@@ -76,7 +76,11 @@ public class ball1 extends Actor
         
         if(checkLost())
         {
-            counter.addScore();
+            if(getX() <= 100) {
+                counter.addScoreToB();
+            } else if(getX() >=500) {
+                counter.addScoreToA();
+            }
             setLocation(300, 200);
             Actor baby1 = (Actor)getWorld().getObjects(baby1.class).get(0);
             baby1.setLocation(150, 100);
