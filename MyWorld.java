@@ -8,9 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-    //declaring a new variable so we can pass it to other classes and to draw it
+    //declaring a new variable of counter type so we can pass it to other classes and to draw it
     Counter counter = new Counter();
-    
+    //declaring a variable for the goal event
     GoalEvent goalEvent = new GoalEvent();
     
     //declaring the baby speed of move and the ball speed
@@ -32,6 +32,8 @@ public class MyWorld extends World
         return ballSpeed;
     }
     
+    //method that pass the team that scored to the goal event class
+    //method that reset the timer
     public void goalScored(int team)
     {
         goalEvent.resetTimer(50, team);
