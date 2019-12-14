@@ -86,6 +86,7 @@ public class ball1 extends Actor
         {
             //in case it does:
             // -we add a point to team team that scored
+            // -we show the notification for GOAL for the relevant team
             if(getX() <= 100) {
                 counter.addScoreToB();
                 myWorld.goalScored(2);
