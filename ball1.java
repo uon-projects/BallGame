@@ -91,6 +91,7 @@ public class ball1 extends Actor
             } else if(getX() >=500) {
                 counter.addScoreToA();
             }
+            myWorld.goalScored();
             // -we initialise the team members and the ball to the default positions
             setLocation(300, 200);
             Actor baby1 = (Actor)getWorld().getObjects(baby1.class).get(0);

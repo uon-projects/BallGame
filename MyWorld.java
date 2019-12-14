@@ -11,6 +11,8 @@ public class MyWorld extends World
     //declaring a new variable so we can pass it to other classes and to draw it
     Counter counter = new Counter();
     
+    GoalEvent goalEvent = new GoalEvent();
+    
     //declaring the baby speed of move and the ball speed
     int babyMoveSpeed = 2, ballSpeed = 6;
     
@@ -28,6 +30,11 @@ public class MyWorld extends World
     //public method that helps the ball to move
     public int getBallSpeed() {
         return ballSpeed;
+    }
+    
+    public void goalScored()
+    {
+        goalEvent.resetTimer();
     }
     
     //public method to initialise the class - MyWorld()
@@ -57,6 +64,12 @@ public class MyWorld extends World
 
         //adding the ball to the screen
         addObject(new ball1(), 450, 100);
+        
+        //adding the goal event
+        if(goalEvent.getElapsedTime() > 0)
+        {
+            addObject(goalEvent, 300, 60);
+        }
         
         //End of code that must be included in your solution
     }
