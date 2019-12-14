@@ -88,10 +88,11 @@ public class ball1 extends Actor
             // -we add a point to team team that scored
             if(getX() <= 100) {
                 counter.addScoreToB();
+                myWorld.goalScored(2);
             } else if(getX() >=500) {
                 counter.addScoreToA();
+                myWorld.goalScored(1);
             }
-            myWorld.goalScored();
             // -we initialise the team members and the ball to the default positions
             setLocation(300, 200);
             Actor baby1 = (Actor)getWorld().getObjects(baby1.class).get(0);
