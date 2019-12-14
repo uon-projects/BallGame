@@ -8,14 +8,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GoalEvent extends Actor
 {
-    //declare the variables that keeps the score for both teams (team A and team B)
-    //we initialise them to 0
-    public int timer = 0;
-    private int teamScored;
+    //declare the variables
+    public int timer = 0; //the timer
+    private int teamScored; //stores the team that have scored
     
     //method that its called in order to draw the counter
     public void act()
     {
+        //declaring the string so we can show the goal for the relevant team
         String gameEventText = "                     ";
         if(teamScored == 1) {
             gameEventText = " GOAL!" + gameEventText;
@@ -32,7 +32,7 @@ public class GoalEvent extends Actor
     }
     
     //public method that can be accessed outside of this classes
-    //this method increase the Team A score by 1
+    //this method resets the timer and set stores the team that has scored
     public void resetTimer(int newTime, int team)
     {
         timer = newTime;
