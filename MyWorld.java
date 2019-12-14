@@ -32,9 +32,9 @@ public class MyWorld extends World
         return ballSpeed;
     }
     
-    public void goalScored()
+    public void goalScored(int team)
     {
-        goalEvent.resetTimer();
+        goalEvent.resetTimer(50, team);
     }
     
     //public method to initialise the class - MyWorld()
@@ -54,6 +54,9 @@ public class MyWorld extends World
         //adding the counter to the screen
         addObject(counter, 300, 25);
         
+        //adding the goal event
+        addObject(goalEvent, 300, 60);
+        
         //adding the babies
         //adding team A (Baby 1 and Baby 3)
         addObject(new baby1(), 150, 100);
@@ -64,12 +67,6 @@ public class MyWorld extends World
 
         //adding the ball to the screen
         addObject(new ball1(), 450, 100);
-        
-        //adding the goal event
-        if(goalEvent.getElapsedTime() > 0)
-        {
-            addObject(goalEvent, 300, 60);
-        }
         
         //End of code that must be included in your solution
     }
