@@ -1,0 +1,74 @@
+autodelete:
+  exclude_branch:
+    - TeodorHMX1-patch-1
+  closed_pr: false
+dco:
+  require:
+    members: false
+merge_block:
+  branch:
+    - master
+    - fzdg
+  override_users:
+    - TeodorHMX1
+    - Teogor
+    - ZeoBot
+    
+# Number of days of inactivity before an issue becomes stale
+daysUntilStale: 1
+# Number of days of inactivity before a stale issue is closed
+daysUntilClose: 1
+# Issues with these labels will never be considered stale
+exemptLabels:
+  - pinned
+  - security
+# Label to use when marking an issue as stale
+staleLabel: wontfix
+# Comment to post when marking an issue as stale. Set to `false` to disable
+markComment: >
+  This issue has been automatically marked as stale because it has not had
+  recent activity. It will be closed if no further activity occurs. Thank you
+  for your contributions.
+# Comment to post when closing a stale issue. Set to `false` to disable
+closeComment: true
+
+auto_assign:
+  useReviewGroups: false
+  reviewGroups:
+  useAssigneeGroups: false
+  assigneeGroups:
+  numberOfAssignees: 0
+  numberOfReviewers: 0
+  skipKeywords:
+    - wip
+  addReviewers: true
+  addAssignees: false
+  reviewers:
+    - TeodorHMX1
+    - Teogor
+  assignees:
+
+# Labels: define labels for Issues and Pull Requests
+settings:
+  repository:
+    # A short description of the repository that will show up on GitHub
+    description: description of repo
+    # A URL with more information about the repository
+    homepage: https://example.github.io/
+    # Either `true` to make the repository private, or `false` to make it public.
+    private: false
+    # Either `true` to enable issues for this repository, `false` to disable them.
+    has_issues: true
+    # Either `true` to enable the wiki for this repository, `false` to disable it.
+    has_wiki: true
+    # Either `true` to enable downloads for this repository, `false` to disable them.
+    has_downloads: false
+  labels:
+    - name: zbot-bip
+      color: 212121
+    - name: test
+      color: e53242
+    - name: issue]
+      color: e53242
+    - name: retxd11
+      color: e53242
