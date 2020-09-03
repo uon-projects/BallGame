@@ -1,6 +1,6 @@
 autodelete:
   exclude_branch:
-    - TeodorHMX1-patch-1
+    - TeodorHMXX
   closed_pr: false
 dco:
   require:
