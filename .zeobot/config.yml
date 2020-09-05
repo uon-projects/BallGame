@@ -1,0 +1,46 @@
+# zeobot defaults values for the installed repository
+zeobot:
+  # if enabled, zeobot will run for the repo
+  enabled: true
+  # zeobot's features
+  features:
+    # if set to true zeobot will post comments in
+    # issue or pull requests
+    can_comment: true
+
+# zeobot's functions
+# Auto Assign (AA)
+# on new pull request created assign people to it
+auto_assign:
+  # if enabled, Auto Assign will work for the repo
+  enabled: true
+  use_review_groups: false
+  use_assignee_groups: false
+  add_reviewers: true
+  add_assignees: false
+  number_of_assignees: 0
+  number_of_reviewers: 0
+  review_groups:
+  assignee_groups:
+  reviewers_to_add:
+    - TeodorHMX1
+    - Teogor
+  assignees_to_add:
+  skip_keywords:
+autodelete_merged_branches:
+  enabled: true
+  branches_to_exclude:
+branch_in_progress:
+  enabled: true
+contributors_commits_signed:
+  enabled: true
+  require_for:
+    members: false
+enforce_branch_merge:
+  enabled: true
+  branches_to_enforce:
+    - master
+  give_access_to:
+    - TeodorHMX1
+    - Teogor
+    - ZeoBot[Bot]
