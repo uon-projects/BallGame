@@ -1,0 +1,97 @@
+# Copyright 2020 ZeoFlow
+
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+
+#      http://www.apache.org/licenses/LICENSE-2.0
+
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# zeobot defaults values for the installed repository
+zeobot:
+  # if enabled, zeobot will run for the repo
+  enabled: true
+  # zeobot's features
+  commands:
+    enabled: false
+    listen_to:
+      users:
+  features:
+    # if set to true zeobot will post comments in
+    # issue or pull requests
+    can_comment: true
+
+# zeobot's functions
+# Auto Assign (AA)
+# on new pull request created assign people to it
+auto_assign:
+  # if enabled, Auto Assign will work for the repo
+  enabled: true
+  use_review_groups: false
+  use_assignee_groups: false
+  add_reviewers: true
+  add_assignees: false
+  number_of_assignees: 0
+  number_of_reviewers: 0
+  review_groups:
+  assignee_groups:
+  reviewers_to_add:
+  assignees_to_add:
+  skip_keywords:
+autodelete_merged_branches:
+  enabled: true
+  branches_to_exclude:
+branch_in_progress:
+  enabled: true
+contributors_commits_signed:
+  enabled: true
+  require_for:
+    members: false
+enforce_branch_merge:
+  enabled: true
+  branches_to_enforce:
+  give_access_to:
+license_checker:
+  enabled: true
+  allowed:
+    copyright_holders:
+    licenses:
+      - Apache-2.0
+  to_check:
+    extensions:
+  to_ignore:
+    files_path:
+draft_release:
+  enabled: true
+  template:
+    name: 'v$RESOLVED_VERSION'
+    tag: 'v$RESOLVED_VERSION'
+    version: '$MAJOR.$MINOR.$PATCH'
+    content: |
+      ## Changes
+
+      $CHANGES
+  change:
+    template: '- $TITLE (#$NUMBER) by @$AUTHORS'
+    title_escapes: '\<*_&'
+  labels_to:
+    exclude:
+    include:
+  version_resolver:
+    major:
+      labels:
+    minor:
+      labels:
+    patch:
+      labels:
+    default: 'patch'
+  categories:
+  sort:
+    pull_requests:
+      by: 'merged_at'
+      direction: 'descending'
