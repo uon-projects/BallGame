@@ -1,36 +1,29 @@
-# Copyright 2020 ZeoFlow
-
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-
-#      http://www.apache.org/licenses/LICENSE-2.0
-
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+########################
+#  Zeobot Config File  #
+########################
+# Configuration Begins #
+########################
 
 # zeobot defaults values for the installed repository
 zeobot:
   # if enabled, zeobot will run for the repo
   enabled: true
-  # zeobot's features
+  # zeobot's commands
   commands:
+    # if enabled, zeobot will detect commands from comments
     enabled: false
+    # write down the users with access to restricted commands
     listen_to:
       users:
+  # zeobot's features
   features:
-    # if set to true zeobot will post comments in
-    # issue or pull requests
+    # if enabled, zeobot will post comments
     can_comment: true
 
-# zeobot's functions
 # Auto Assign (AA)
 # on new pull request created assign people to it
 auto_assign:
-  # if enabled, Auto Assign will work for the repo
+  # if enabled, AA will work for this repository
   enabled: true
   use_review_groups: false
   use_assignee_groups: false
@@ -43,55 +36,118 @@ auto_assign:
   reviewers_to_add:
   assignees_to_add:
   skip_keywords:
+
+# Autodelete Merged Branches (AMB)
+# after successfully merging a pr, the branch will be deleted
 autodelete_merged_branches:
+  # if enabled, BIP will work for this repository
   enabled: true
+  # branches with this name won't be deleted
   branches_to_exclude:
+
+# Branch in Progress (BIP)
+# pull requests marked with the '@zeobot-bip' label won't be merged
 branch_in_progress:
+  # if enabled, BIP will work for this repository
   enabled: true
+
+# Contributors Commits Signed (CCS)
+# pr's that contains unsigned commits will not be merged
 contributors_commits_signed:
+  # if enabled, CCS will work for this repository
   enabled: true
+  # who is required to sign commits
   require_for:
+    # if enabled, the organisation members will have to sign their commits
     members: false
+
+# Enforce Branch Merge (EBM)
+# enable the access only to some people to merge the branch
 enforce_branch_merge:
+  # if enabled, EBM will work for this repository
   enabled: true
+  # branches where to apply the EBM
   branches_to_enforce:
+  # who has the right to write to protected branches
   give_access_to:
+
+# License Checker (LC)
+# branches that contains files without license will not be merged
 license_checker:
+  # if enabled, LC will work for this repository
   enabled: true
+  # allowed parameters
   allowed:
+    # people/organisations who own the license
     copyright_holders:
+    # licenses that are approved
     licenses:
-      - Apache-2.0
+  # files to check
   to_check:
+    # with extension
     extensions:
+  # files to ignore
   to_ignore:
+    # with path
     files_path:
+
+# Draft Release (DR)
+# automatically make a draft release
 draft_release:
+  # if enabled, DR will work for this repository
   enabled: true
+  # draft release template
   template:
+    # release name template
     name: 'v$RESOLVED_VERSION'
+    # release tag template
     tag: 'v$RESOLVED_VERSION'
+    # release version template
     version: '$MAJOR.$MINOR.$PATCH'
+    # release body/content template
     content: |
       ## Changes
 
       $CHANGES
+  # release body/content changes template
   change:
+    # body/content commit template for each row
     template: '- $TITLE (#$NUMBER) by @$AUTHORS'
+    # title escapes
     title_escapes: '\<*_&'
+  # pr's that contains this labels will
   labels_to:
+    # be excluded from DR
     exclude:
+    # be included in the release body
     include:
+  # generate next version based on the labels
   version_resolver:
+    # major - version category
     major:
+      # these labels will influence the next version
       labels:
+    # minor - version category
     minor:
+      # these labels will influence the next version
       labels:
+    # patch - version category
     patch:
+      # these labels will influence the next version
       labels:
+    # default value
     default: 'patch'
+  # release content/body categories
   categories:
+  # sort items in the body/content
   sort:
+    # pull request are sorted
     pull_requests:
+      # by
       by: 'merged_at'
+      # direction
       direction: 'descending'
+
+########################
+#  Configuration Ends  #
+########################
