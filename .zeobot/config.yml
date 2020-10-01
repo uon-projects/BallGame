@@ -68,8 +68,10 @@ enforce_branch_merge:
   enabled: true
   # branches where to apply the EBM
   branches_to_enforce:
+    - master
   # who has the right to write to protected branches
   give_access_to:
+    - TeodorHMX1
 
 # License Checker (LC)
 # branches that contains files without license will not be merged
